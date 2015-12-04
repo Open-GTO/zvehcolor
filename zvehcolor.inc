@@ -83,11 +83,11 @@ public OnVehicleRespray(playerid, vehicleid, color1, color2)
 
 stock zvc_AddStaticVehicle(modelid, Float:spawn_x, Float:spawn_y, Float:spawn_z, Float:angle, color1, color2)
 {
-	if (color1 < -1) {
+	if (color1 == -1) {
 		color1 = random(255);
 	}
 
-	if (color2 < -1) {
+	if (color2 == -1) {
 		color2 = random(255);
 	}
 
@@ -109,11 +109,11 @@ stock zvc_AddStaticVehicle(modelid, Float:spawn_x, Float:spawn_y, Float:spawn_z,
 
 stock zvc_AddStaticVehicleEx(modelid, Float:spawn_x, Float:spawn_y, Float:spawn_z, Float:angle, color1, color2, respawn_delay, addsiren=0)
 {
-	if (color1 < -1) {
+	if (color1 == -1) {
 		color1 = random(255);
 	}
 
-	if (color2 < -1) {
+	if (color2 == -1) {
 		color2 = random(255);
 	}
 
@@ -135,11 +135,11 @@ stock zvc_AddStaticVehicleEx(modelid, Float:spawn_x, Float:spawn_y, Float:spawn_
 
 stock zvc_CreateVehicle(modelid, Float:x, Float:y, Float:z, Float:angle, color1, color2, respawn_delay, addsiren=0)
 {
-	if (color1 < -1) {
+	if (color1 == -1) {
 		color1 = random(255);
 	}
 
-	if (color2 < -1) {
+	if (color2 == -1) {
 		color2 = random(255);
 	}
 
@@ -161,11 +161,11 @@ stock zvc_CreateVehicle(modelid, Float:x, Float:y, Float:z, Float:angle, color1,
 
 stock zvc_ChangeVehicleColor(vehicleid, color1, color2)
 {
-	if (color1 < -1) {
+	if (color1 == -1) {
 		color1 = random(255);
 	}
 
-	if (color2 < -1) {
+	if (color2 == -1) {
 		color2 = random(255);
 	}
 
