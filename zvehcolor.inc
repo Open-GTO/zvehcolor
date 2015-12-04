@@ -77,7 +77,7 @@ public OnVehicleRespray(playerid, vehicleid, color1, color2)
  
 #define OnVehicleRespray zvc_OnVehicleRespray
 #if defined zvc_OnVehicleRespray
-	forward zvc_OnVehicleRespray(playerid, vehicleid, paintjobid);
+	forward zvc_OnVehicleRespray(playerid, vehicleid, color1, color2);
 #endif
 
 
