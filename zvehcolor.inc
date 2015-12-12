@@ -1,6 +1,6 @@
 /*
 
-	About: vehicle color & paintjob system
+	About: get vehicle current color and paintjob
 	Author:	ziggi
 
 	Usage:
@@ -19,27 +19,6 @@
 
 #define _zvehcolor_included
 #pragma library zvehcolor
-
-/*
-
-	Define const
-
-*/
-
-
-/*
-
-	Define functions
-
-*/
-
-
-/*
-
-	Enums
-
-*/
-
 
 /*
 
@@ -228,9 +207,9 @@ stock zvc_ChangeVehiclePaintjob(vehicleid, paintjobid)
 	return ChangeVehiclePaintjob(vehicleid, paintjobid);
 }
 #if defined _ALS_ChangeVehiclePaintjob
-    #undef ChangeVehiclePaintjob
+	#undef ChangeVehiclePaintjob
 #else
-    #define _ALS_ChangeVehiclePaintjob
+	#define _ALS_ChangeVehiclePaintjob
 #endif
  
 #define ChangeVehiclePaintjob zvc_ChangeVehiclePaintjob
