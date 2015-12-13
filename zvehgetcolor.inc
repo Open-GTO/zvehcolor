@@ -13,12 +13,12 @@
 	#error "Please include a_samp or a_npc before zvehcolor"
 #endif
 
-#if defined _zvehcolor_included
+#if defined _zvehgetcolor_included
 	#endinput
 #endif
 
-#define _zvehcolor_included
-#pragma library zvehcolor
+#define _zvehgetcolor_included
+#pragma library zvehgetcolor
 
 /*
 
