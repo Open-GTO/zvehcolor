@@ -1,4 +1,4 @@
-# zvehcolor
+# zvehgetcolor
 Get vehicle current color and paintjob
 
 # Provides functions
