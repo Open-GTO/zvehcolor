@@ -72,8 +72,10 @@ stock zvc_AddStaticVehicle(modelid, Float:spawn_x, Float:spawn_y, Float:spawn_z,
 
 	new id = AddStaticVehicle(modelid, spawn_x, spawn_y, spawn_z, angle, color1, color2);
 
-	gColor1{id} = color1;
-	gColor2{id} = color2;
+	if (id != INVALID_VEHICLE_ID) {
+		gColor1{id} = color1;
+		gColor2{id} = color2;
+	}
 
 	return id;
 }
@@ -98,8 +100,10 @@ stock zvc_AddStaticVehicleEx(modelid, Float:spawn_x, Float:spawn_y, Float:spawn_
 
 	new id = AddStaticVehicleEx(modelid, spawn_x, spawn_y, spawn_z, angle, color1, color2, respawn_delay, addsiren);
 
-	gColor1{id} = color1;
-	gColor2{id} = color2;
+	if (id != INVALID_VEHICLE_ID) {
+		gColor1{id} = color1;
+		gColor2{id} = color2;
+	}
 
 	return id;
 }
@@ -124,8 +128,10 @@ stock zvc_CreateVehicle(modelid, Float:x, Float:y, Float:z, Float:angle, color1,
 
 	new id = CreateVehicle(modelid, x, y, z, angle, color1, color2, respawn_delay, addsiren);
 
-	gColor1{id} = color1;
-	gColor2{id} = color2;
+	if (id != INVALID_VEHICLE_ID) {
+		gColor1{id} = color1;
+		gColor2{id} = color2;
+	}
 
 	return id;
 }
