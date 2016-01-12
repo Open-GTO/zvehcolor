@@ -6,6 +6,7 @@
 	Usage:
 		GetVehicleColor(vehicleid, &color1, &color2)
 		GetVehiclePaintjob(vehicleid)
+		RemoveVehiclePaintjob(vehicleid)
 
 */
 
@@ -21,6 +22,12 @@
 #pragma library zvehgetcolor
 
 /*
+	Defines
+*/
+
+#define INVALID_VEHICLE_PAINTJOB_ID 3
+
+/*
 
 	Vars
 
@@ -29,7 +36,13 @@
 static
 	gColor1[MAX_VEHICLES char],
 	gColor2[MAX_VEHICLES char],
-	gPaintjob[MAX_VEHICLES char];
+	gPaintjob[MAX_VEHICLES char] = {
+			INVALID_VEHICLE_PAINTJOB_ID |
+			INVALID_VEHICLE_PAINTJOB_ID << 8 |
+			INVALID_VEHICLE_PAINTJOB_ID << 16 | 
+			INVALID_VEHICLE_PAINTJOB_ID << 24,
+			...
+		};
 
 /*
 
@@ -206,6 +219,19 @@ public OnVehiclePaintjob(playerid, vehicleid, paintjobid)
 #endif
 
 
+stock RemoveVehiclePaintjob(vehicleid)
+{
+	gPaintjob{vehicleid} = INVALID_VEHICLE_PAINTJOB_ID;
+	ChangeVehiclePaintjob(vehicleid, INVALID_VEHICLE_PAINTJOB_ID);
+}
+
+
+stock GetVehiclePaintjob(vehicleid)
+{
+	return gPaintjob{vehicleid};
+}
+
+
 stock zvc_ChangeVehiclePaintjob(vehicleid, paintjobid)
 {
 	gPaintjob{vehicleid} = paintjobid;
@@ -221,7 +247,16 @@ stock zvc_ChangeVehiclePaintjob(vehicleid, paintjobid)
 #define ChangeVehiclePaintjob zvc_ChangeVehiclePaintjob
 
 
-stock GetVehiclePaintjob(vehicleid)
+stock zvc_DestroyVehicle(vehicleid)
 {
-	return gPaintjob{vehicleid};
+	gPaintjob[vehicleid] = INVALID_VEHICLE_PAINTJOB_ID;
+
+	return DestroyVehicle(vehicleid);
 }
+#if defined _ALS_DestroyVehicle
+	#undef DestroyVehicle
+#else
+	#define _ALS_DestroyVehicle
+#endif
+ 
+#define DestroyVehicle zvc_DestroyVehicle
