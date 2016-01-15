@@ -249,7 +249,7 @@ stock zvc_ChangeVehiclePaintjob(vehicleid, paintjobid)
 
 stock zvc_DestroyVehicle(vehicleid)
 {
-	gPaintjob[vehicleid] = INVALID_VEHICLE_PAINTJOB_ID;
+	gPaintjob{vehicleid} = INVALID_VEHICLE_PAINTJOB_ID;
 
 	return DestroyVehicle(vehicleid);
 }
