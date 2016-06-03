@@ -19,7 +19,6 @@
 #endif
 
 #define _zvehgetcolor_included
-#pragma library zvehgetcolor
 
 /*
 	Defines
@@ -39,7 +38,7 @@ static
 	gPaintjob[MAX_VEHICLES char] = {
 			INVALID_VEHICLE_PAINTJOB_ID |
 			INVALID_VEHICLE_PAINTJOB_ID << 8 |
-			INVALID_VEHICLE_PAINTJOB_ID << 16 | 
+			INVALID_VEHICLE_PAINTJOB_ID << 16 |
 			INVALID_VEHICLE_PAINTJOB_ID << 24,
 			...
 		};
@@ -66,7 +65,7 @@ public OnVehicleRespray(playerid, vehicleid, color1, color2)
 #else
 	#define _ALS_OnVehicleRespray
 #endif
- 
+
 #define OnVehicleRespray zvc_OnVehicleRespray
 #if defined zvc_OnVehicleRespray
 	forward zvc_OnVehicleRespray(playerid, vehicleid, color1, color2);
@@ -97,7 +96,7 @@ stock zvc_AddStaticVehicle(modelid, Float:spawn_x, Float:spawn_y, Float:spawn_z,
 #else
 	#define _ALS_AddStaticVehicle
 #endif
- 
+
 #define AddStaticVehicle zvc_AddStaticVehicle
 
 
@@ -125,7 +124,7 @@ stock zvc_AddStaticVehicleEx(modelid, Float:spawn_x, Float:spawn_y, Float:spawn_
 #else
 	#define _ALS_AddStaticVehicleEx
 #endif
- 
+
 #define AddStaticVehicleEx zvc_AddStaticVehicleEx
 
 
@@ -153,7 +152,7 @@ stock zvc_CreateVehicle(modelid, Float:x, Float:y, Float:z, Float:angle, color1,
 #else
 	#define _ALS_CreateVehicle
 #endif
- 
+
 #define CreateVehicle zvc_CreateVehicle
 
 
@@ -171,7 +170,7 @@ stock zvc_ChangeVehicleColor(vehicleid, color1, color2)
 
 	if (success) {
 		gColor1{vehicleid} = color1;
-		gColor2{vehicleid} = color2;	
+		gColor2{vehicleid} = color2;
 	}
 
 	return success;
@@ -181,7 +180,7 @@ stock zvc_ChangeVehicleColor(vehicleid, color1, color2)
 #else
 	#define _ALS_ChangeVehicleColor
 #endif
- 
+
 #define ChangeVehicleColor zvc_ChangeVehicleColor
 
 
@@ -212,7 +211,7 @@ public OnVehiclePaintjob(playerid, vehicleid, paintjobid)
 #else
 	#define _ALS_OnVehiclePaintjob
 #endif
- 
+
 #define OnVehiclePaintjob zvc_OnVehiclePaintjob
 #if defined zvc_OnVehiclePaintjob
 	forward zvc_OnVehiclePaintjob(playerid, vehicleid, paintjobid);
@@ -243,7 +242,7 @@ stock zvc_ChangeVehiclePaintjob(vehicleid, paintjobid)
 #else
 	#define _ALS_ChangeVehiclePaintjob
 #endif
- 
+
 #define ChangeVehiclePaintjob zvc_ChangeVehiclePaintjob
 
 
@@ -258,5 +257,5 @@ stock zvc_DestroyVehicle(vehicleid)
 #else
 	#define _ALS_DestroyVehicle
 #endif
- 
+
 #define DestroyVehicle zvc_DestroyVehicle
